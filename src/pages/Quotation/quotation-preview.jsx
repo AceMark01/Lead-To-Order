@@ -19,12 +19,24 @@ const QuotationPreview = ({
       <div id="quotation-preview" className="bg-white border p-6 rounded-lg">
         <div className="flex justify-between items-start border-b pb-4">
           <div className="w-1/3">
-            <p className="font-bold">{selectedReferences[0] || "Consignor Name"}</p>
-            <p className="text-sm">{quotationData.consignorAddress || "Consignor Address"}</p>
-            <p className="text-sm">Mobile: {quotationData.consignorMobile?.split(",")[0] || "N/A"}</p>
-            <p className="text-sm">Phone: {quotationData.consignorPhone || "N/A"}</p>
-            <p className="text-sm">GSTIN: {quotationData.consignorGSTIN || "N/A"}</p>
-            <p className="text-sm">State Code: {quotationData.consignorStateCode || "N/A"}</p>
+            <p className="font-bold">
+              {selectedReferences[0] || "Consignor Name"}
+            </p>
+            <p className="text-sm">
+              {quotationData.consignorAddress || "Consignor Address"}
+            </p>
+            <p className="text-sm">
+              Mobile: {quotationData.consignorMobile?.split(",")[0] || "N/A"}
+            </p>
+            <p className="text-sm">
+              Phone: {quotationData.consignorPhone || "N/A"}
+            </p>
+            <p className="text-sm">
+              GSTIN: {quotationData.consignorGSTIN || "N/A"}
+            </p>
+            <p className="text-sm">
+              State Code: {quotationData.consignorStateCode || "N/A"}
+            </p>
           </div>
           <div className="w-1/3 text-center">
             <h1 className="text-xl font-bold">QUOTATION</h1>
@@ -79,8 +91,12 @@ const QuotationPreview = ({
                 <th className="border p-2 text-left">Qty</th>
                 <th className="border p-2 text-left">Units</th>
                 <th className="border p-2 text-left">Rate</th>
-                {!hiddenColumns?.hideDisc && <th className="border p-2 text-left">Disc %</th>}
-                {!hiddenColumns?.hideFlatDisc && <th className="border p-2 text-left">Flat Disc</th>}
+                {!hiddenColumns?.hideDisc && (
+                  <th className="border p-2 text-left">Disc %</th>
+                )}
+                {!hiddenColumns?.hideFlatDisc && (
+                  <th className="border p-2 text-left">Flat Disc</th>
+                )}
                 <th className="border p-2 text-left">Amount</th>
               </tr>
             </thead>
@@ -94,49 +110,75 @@ const QuotationPreview = ({
                   <td className="border p-2">{item.gst}%</td>
                   <td className="border p-2">{item.qty}</td>
                   <td className="border p-2">{item.units}</td>
-                  <td className="border p-2">₹{Number(item.rate).toFixed(2)}</td>
-                  {!hiddenColumns?.hideDisc && <td className="border p-2">{item.discount}%</td>}
-                  {!hiddenColumns?.hideFlatDisc && <td className="border p-2">₹{Number(item.flatDiscount).toFixed(2)}</td>}
-                  <td className="border p-2">₹{Number(item.amount).toFixed(2)}</td>
+                  <td className="border p-2">
+                    ₹{Number(item.rate).toFixed(2)}
+                  </td>
+                  {!hiddenColumns?.hideDisc && (
+                    <td className="border p-2">{item.discount}%</td>
+                  )}
+                  {!hiddenColumns?.hideFlatDisc && (
+                    <td className="border p-2">
+                      ₹{Number(item.flatDiscount).toFixed(2)}
+                    </td>
+                  )}
+                  <td className="border p-2">
+                    ₹{Number(item.amount).toFixed(2)}
+                  </td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
               <tr className="border">
-                <td colSpan={(() => {
-                  let span = 9; // Base columns: S No, Code, Product Name, Description, GST, Qty, Units, Rate, Amount
-                  if (!hiddenColumns?.hideDisc) span += 1;
-                  if (!hiddenColumns?.hideFlatDisc) span += 1;
-                  return span - 1; // Subtract 1 because Amount column is separate
-                })()} className="border p-2 text-right font-bold">
+                <td
+                  colSpan={(() => {
+                    let span = 9; // Base columns: S No, Code, Product Name, Description, GST, Qty, Units, Rate, Amount
+                    if (!hiddenColumns?.hideDisc) span += 1;
+                    if (!hiddenColumns?.hideFlatDisc) span += 1;
+                    return span - 1; // Subtract 1 because Amount column is separate
+                  })()}
+                  className="border p-2 text-right font-bold"
+                >
                   Subtotal
                 </td>
-                <td className="border p-2 font-bold">₹{Number(quotationData.subtotal).toFixed(2)}</td>
+                <td className="border p-2 font-bold">
+                  ₹{Number(quotationData.subtotal).toFixed(2)}
+                </td>
               </tr>
               {!hiddenColumns?.hideTotalFlatDisc && (
                 <tr className="border">
-                  <td colSpan={(() => {
+                  <td
+                    colSpan={(() => {
+                      let span = 9;
+                      if (!hiddenColumns?.hideDisc) span += 1;
+                      if (!hiddenColumns?.hideFlatDisc) span += 1;
+                      return span - 1;
+                    })()}
+                    className="border p-2 text-right"
+                  >
+                    Total Flat Discount
+                  </td>
+                  <td className="border p-2">
+                    -₹{Number(quotationData.totalFlatDiscount).toFixed(2)}
+                  </td>
+                </tr>
+              )}
+              <tr className="border">
+                <td
+                  colSpan={(() => {
                     let span = 9;
                     if (!hiddenColumns?.hideDisc) span += 1;
                     if (!hiddenColumns?.hideFlatDisc) span += 1;
                     return span - 1;
-                  })()} className="border p-2 text-right">
-                    Total Flat Discount
-                  </td>
-                  <td className="border p-2">-₹{Number(quotationData.totalFlatDiscount).toFixed(2)}</td>
-                </tr>
-              )}
-              <tr className="border">
-                <td colSpan={(() => {
-                  let span = 9;
-                  if (!hiddenColumns?.hideDisc) span += 1;
-                  if (!hiddenColumns?.hideFlatDisc) span += 1;
-                  return span - 1;
-                })()} className="border p-2 text-right">
+                  })()}
+                  className="border p-2 text-right"
+                >
                   Taxable Amount
                 </td>
                 <td className="border p-2">
-                  ₹{Number(quotationData.subtotal - quotationData.totalFlatDiscount).toFixed(2)}
+                  ₹
+                  {Number(
+                    quotationData.subtotal - quotationData.totalFlatDiscount
+                  ).toFixed(2)}
                 </td>
               </tr>
             </tfoot>
@@ -159,33 +201,42 @@ const QuotationPreview = ({
                   <tr className="border">
                     <td className="border p-2">IGST</td>
                     <td className="border p-2">{quotationData.igstRate}%</td>
-                    <td className="border p-2">₹{Number(quotationData.igstAmount).toFixed(2)}</td>
+                    <td className="border p-2">
+                      ₹{Number(quotationData.igstAmount).toFixed(2)}
+                    </td>
                   </tr>
                 ) : (
                   <>
                     <tr className="border">
                       <td className="border p-2">CGST</td>
                       <td className="border p-2">{quotationData.cgstRate}%</td>
-                      <td className="border p-2">₹{Number(quotationData.cgstAmount).toFixed(2)}</td>
+                      <td className="border p-2">
+                        ₹{Number(quotationData.cgstAmount).toFixed(2)}
+                      </td>
                     </tr>
                     <tr className="border">
                       <td className="border p-2">SGST</td>
                       <td className="border p-2">{quotationData.sgstRate}%</td>
-                      <td className="border p-2">₹{Number(quotationData.sgstAmount).toFixed(2)}</td>
+                      <td className="border p-2">
+                        ₹{Number(quotationData.sgstAmount).toFixed(2)}
+                      </td>
                     </tr>
                   </>
                 )}
                 <tr className="border font-bold">
                   <td className="border p-2">Total Tax</td>
                   <td className="border p-2">
-                    {quotationData.isIGST ? quotationData.igstRate : quotationData.cgstRate + quotationData.sgstRate}%
+                    {quotationData.isIGST
+                      ? quotationData.igstRate
+                      : quotationData.cgstRate + quotationData.sgstRate}
+                    %
                   </td>
                   <td className="border p-2">
                     ₹
                     {Number(
                       quotationData.isIGST
                         ? quotationData.igstAmount
-                        : quotationData.cgstAmount + quotationData.sgstAmount,
+                        : quotationData.cgstAmount + quotationData.sgstAmount
                     ).toFixed(2)}
                   </td>
                 </tr>
@@ -194,14 +245,18 @@ const QuotationPreview = ({
                     <td colSpan="2" className="border p-2 text-right">
                       Special Discount
                     </td>
-                    <td className="border p-2">-₹{Number(specialDiscount).toFixed(2)}</td>
+                    <td className="border p-2">
+                      -₹{Number(specialDiscount).toFixed(2)}
+                    </td>
                   </tr>
                 )}
                 <tr className="border font-bold">
                   <td colSpan="2" className="border p-2 text-right">
                     Grand Total
                   </td>
-                  <td className="border p-2">₹{Number(quotationData.total).toFixed(2)}</td>
+                  <td className="border p-2">
+                    ₹{Number(quotationData.total).toFixed(2)}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -224,7 +279,9 @@ const QuotationPreview = ({
               </p>
             </div>
             <div className="text-right">
-              <p className="font-bold text-xl">Grand Total: ₹{Number(quotationData.total).toFixed(2)}</p>
+              <p className="font-bold text-xl">
+                Grand Total: ₹{Number(quotationData.total).toFixed(2)}
+              </p>
             </div>
           </div>
         </div>
@@ -271,9 +328,12 @@ const QuotationPreview = ({
               </table>
 
               {quotationData.specialOffers &&
-                quotationData.specialOffers.filter((offer) => offer.trim()).length > 0 && (
+                quotationData.specialOffers.filter((offer) => offer.trim())
+                  .length > 0 && (
                   <div className="mt-4">
-                    <h4 className="font-bold mb-2 text-orange-600">Divine Empire's 10th Anniversary Special Offer</h4>
+                    <h4 className="font-bold mb-2 text-orange-600">
+                      Divine Empire's 10th Anniversary Special Offer
+                    </h4>
                     <div className="bg-orange-50 p-3 rounded border border-orange-200">
                       {quotationData.specialOffers
                         .filter((offer) => offer.trim())
@@ -286,20 +346,22 @@ const QuotationPreview = ({
                   </div>
                 )}
 
-              {quotationData.notes && quotationData.notes.filter((note) => note.trim()).length > 0 && (
-                <div className="mt-4">
-                  <h4 className="font-bold mb-2">Notes</h4>
-                  <ul className="list-disc pl-5">
-                    {quotationData.notes
-                      .filter((note) => note.trim())
-                      .map((note, index) => (
-                        <li key={index} className="py-1">
-                          {note}
-                        </li>
-                      ))}
-                  </ul>
-                </div>
-              )}
+              {quotationData.notes &&
+                quotationData.notes.filter((note) => note.trim()).length >
+                  0 && (
+                  <div className="mt-4">
+                    <h4 className="font-bold mb-2">Notes</h4>
+                    <ul className="list-disc pl-5">
+                      {quotationData.notes
+                        .filter((note) => note.trim())
+                        .map((note, index) => (
+                          <li key={index} className="py-1">
+                            {note}
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
             </div>
           </div>
         </div>
@@ -318,12 +380,15 @@ const QuotationPreview = ({
           <div className="text-right">
             <h3 className="font-bold mb-2">Declaration:</h3>
             <p>
-              We declare that this Quotation shows the actual price of the goods described and that all particulars are
-              true and correct.
+              We declare that this Quotation shows the actual price of the goods
+              described and that all particulars are true and correct.
             </p>
-            <p className="mt-4">Prepared By: {quotationData.preparedBy || "N/A"}</p>
+            <p className="mt-4">
+              Prepared By: {quotationData.preparedBy || "N/A"}
+            </p>
             <p className="mt-4 text-sm italic">
-              This Quotation is computer-generated and does not require a seal or signature.
+              This Quotation is computer-generated and does not require a seal
+              or signature.
             </p>
           </div>
         </div>
@@ -342,8 +407,8 @@ const QuotationPreview = ({
             <button
               className="border border-gray-300 hover:bg-gray-100 p-2 rounded-md"
               onClick={() => {
-                navigator.clipboard.writeText(quotationLink)
-                alert("Quotation link copied to clipboard")
+                navigator.clipboard.writeText(quotationLink);
+                alert("Quotation link copied to clipboard");
               }}
             >
               <CopyIcon className="h-4 w-4" />
@@ -353,7 +418,8 @@ const QuotationPreview = ({
             </button>
           </div>
           <p className="text-sm text-gray-500 mt-2">
-            Share this link with the client. They can view and request updates to the quotation.
+            Share this link with the client. They can view and request updates
+            to the quotation.
           </p>
         </div>
       )}
@@ -362,12 +428,17 @@ const QuotationPreview = ({
         <div className="p-4 border rounded-md bg-gray-50">
           <p className="font-medium mb-2">PDF Document:</p>
           <div className="flex items-center gap-2">
-            <input type="text" value={pdfUrl} readOnly className="w-full p-2 border border-gray-300 rounded-md" />
+            <input
+              type="text"
+              value={pdfUrl}
+              readOnly
+              className="w-full p-2 border border-gray-300 rounded-md"
+            />
             <button
               className="border border-gray-300 hover:bg-gray-100 p-2 rounded-md"
               onClick={() => {
-                navigator.clipboard.writeText(pdfUrl)
-                alert("PDF URL copied to clipboard")
+                navigator.clipboard.writeText(pdfUrl);
+                alert("PDF URL copied to clipboard");
               }}
             >
               <CopyIcon className="h-4 w-4" />
@@ -409,7 +480,7 @@ const QuotationPreview = ({
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default QuotationPreview
