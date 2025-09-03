@@ -58,7 +58,7 @@ function DashboardCharts() {
         setIsLoading(true)
         
         // Fetch data from FMS sheet for leads and lead sources
-        const fmsUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+        const fmsUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
         const fmsResponse = await fetch(fmsUrl)
         const fmsText = await fmsResponse.text()
         
@@ -69,7 +69,7 @@ function DashboardCharts() {
         const fmsData = JSON.parse(fmsJsonData)
         
         // Fetch data from Leads Tracker sheet for enquiries (where column E is "yes")
-        const leadsTrackerUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=Leads Tracker"
+        const leadsTrackerUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=Leads Tracker"
         const leadsTrackerResponse = await fetch(leadsTrackerUrl)
         const leadsTrackerText = await leadsTrackerResponse.text()
         
@@ -80,7 +80,7 @@ function DashboardCharts() {
         const leadsTrackerData = JSON.parse(leadsTrackerJsonData)
         
         // Fetch data from Enquiry Tracker sheet for orders
-        const enquiryUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=Enquiry Tracker"
+        const enquiryUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=Enquiry Tracker"
         const enquiryResponse = await fetch(enquiryUrl)
         const enquiryText = await enquiryResponse.text()
         
@@ -91,7 +91,7 @@ function DashboardCharts() {
         const enquiryData = JSON.parse(enquiryJsonData)
         
         // Fetch data from Make Quotation sheet for quotations
-        const quotationUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=Make Quotation"
+        const quotationUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=Make Quotation"
         const quotationResponse = await fetch(quotationUrl)
         const quotationText = await quotationResponse.text()
         

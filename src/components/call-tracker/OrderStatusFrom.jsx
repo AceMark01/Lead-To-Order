@@ -23,7 +23,7 @@ const [creditLimitOptions, setCreditLimitOptions] = useState([])
         setIsLoadingDropdowns(true)
         
         // Fetch data from DROPDOWN sheet
-        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
         const response = await fetch(dropdownUrl)
         const text = await response.text()
         
@@ -146,7 +146,7 @@ setCreditLimitOptions(["10000", "25000", "50000", "100000"])
         setIsLoadingQuotations(true)
         
         // First try fetching from FMS sheet (for pending enquiries)
-        const fmsUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+        const fmsUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
         const fmsResponse = await fetch(fmsUrl)
         const fmsText = await fmsResponse.text()
         
@@ -176,7 +176,7 @@ setCreditLimitOptions(["10000", "25000", "50000", "100000"])
         
         // If no matches found in FMS, try ENQUIRY TO ORDER sheet (for direct enquiries)
         if (matchingQuotations.length === 0) {
-          const enquiryUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=ENQUIRY TO ORDER"
+          const enquiryUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=ENQUIRY TO ORDER"
           const enquiryResponse = await fetch(enquiryUrl)
           const enquiryText = await enquiryResponse.text()
           

@@ -83,7 +83,7 @@ function NewCallTracker() {
   // Add this function inside the NewCallTracker component
 const fetchLatestQuotationNumber = async (enquiryNo) => {
   try {
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
     const params = {
       action: "getQuotationNumber",
       enquiryNo: enquiryNo
@@ -120,7 +120,7 @@ const fetchLatestQuotationNumber = async (enquiryNo) => {
         setIsLoadingDropdown(true)
         
         // Fetch data from DROPDOWN sheet
-        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
         const response = await fetch(dropdownUrl)
         const text = await response.text()
         
@@ -233,7 +233,7 @@ const fetchLatestQuotationNumber = async (enquiryNo) => {
           try {
             const base64Data = reader.result.split(',')[1] // Remove the data:image/...;base64, prefix
             
-            const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+            const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
             
             const params = {
               action: fileType === "pdf" ? "uploadPDF" : "uploadImage",
@@ -455,7 +455,7 @@ const fetchLatestQuotationNumber = async (enquiryNo) => {
   
       // Script URL - replace with your Google Apps Script URL
       const scriptUrl =
-        "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec";
+        "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec ";
   
       // Parameters for Google Apps Script
       const params = {
@@ -502,7 +502,7 @@ const fetchLatestQuotationNumber = async (enquiryNo) => {
   const getLatestOrderNumber = async () => {
     try {
       const scriptUrl =
-        "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec";
+        "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec ";
       const params = {
         action: "getLatestOrderNumber",
         sheetName: "Enquiry Tracker",

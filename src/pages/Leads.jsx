@@ -37,7 +37,7 @@ function Leads() {
   const [stateOptions, setStateOptions] = useState([]) 
   
   // Script URL
-  const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
 
   // Function to format date as dd/mm/yyyy
   const formatDate = (date) => {
@@ -67,7 +67,7 @@ function Leads() {
   const fetchDropdownData = async () => {
     try {
       // Call the Google Apps Script with query parameters to get public access to the DROPDOWNSHEET
-      const publicUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+      const publicUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
       
       const response = await fetch(publicUrl)
       const text = await response.text()
@@ -156,7 +156,7 @@ function Leads() {
   // Function to fetch company data from DROPDOWN sheet
   const fetchCompanyData = async () => {
     try {
-      const publicUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+      const publicUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
       
       const response = await fetch(publicUrl)
       const text = await response.text()
@@ -258,7 +258,7 @@ function Leads() {
   const generateLeadNumber = async () => {
     try {
       // Get the latest lead number from the FMS sheet
-      const publicUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+      const publicUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
       
       const response = await fetch(publicUrl)
       const text = await response.text()

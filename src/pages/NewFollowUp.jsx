@@ -38,7 +38,7 @@ function NewFollowUp() {
   const fetchDropdownData = async () => {
     try {
       const publicUrl =
-        "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+        "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
 
       const response = await fetch(publicUrl)
       const text = await response.text()
@@ -207,7 +207,7 @@ function NewFollowUp() {
   
       // Script URL - replace with your Google Apps Script URL
       const scriptUrl =
-        "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+        "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
   
       // Parameters for Google Apps Script
       const params = {

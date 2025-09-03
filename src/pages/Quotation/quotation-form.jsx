@@ -60,7 +60,7 @@ const QuotationForm = ({
     const fetchDropdownData = async () => {
       try {
         const dropdownUrl =
-          "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+          "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
         const dropdownResponse = await fetch(dropdownUrl)
         const dropdownText = await dropdownResponse.text()
 
@@ -193,7 +193,7 @@ useEffect(() => {
 
       // Fetch from FMS sheet
       const fmsUrl =
-        "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+        "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
       const fmsResponse = await fetch(fmsUrl)
       const fmsText = await fmsResponse.text()
 
@@ -232,7 +232,7 @@ useEffect(() => {
 
       // Fetch from ENQUIRY TO ORDER sheet
       const enquiryUrl =
-        "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=ENQUIRY%20TO%20ORDER"
+        "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=ENQUIRY%20TO%20ORDER"
       const enquiryResponse = await fetch(enquiryUrl)
       const enquiryText = await enquiryResponse.text()
 
@@ -290,7 +290,7 @@ useEffect(() => {
     const fetchProductData = async () => {
       try {
         const dropdownUrl =
-          "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+          "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
         const response = await fetch(dropdownUrl)
         const text = await response.text()
 
@@ -663,7 +663,7 @@ const handleLeadNoSelect = async (selectedLeadNo) => {
 
       // First try FMS sheet
       const fmsUrl =
-        "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+        "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
       const fmsResponse = await fetch(fmsUrl)
       const fmsText = await fmsResponse.text()
 
@@ -763,7 +763,7 @@ const handleLeadNoSelect = async (selectedLeadNo) => {
         console.log("Not found in FMS, checking ENQUIRY TO ORDER sheet")
 
         const enquiryUrl =
-          "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=ENQUIRY%20TO%20ORDER"
+          "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=ENQUIRY%20TO%20ORDER"
         const enquiryResponse = await fetch(enquiryUrl)
         const enquiryText = await enquiryResponse.text()
 

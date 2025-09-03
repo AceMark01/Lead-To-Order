@@ -23,7 +23,7 @@ function DashboardMetrics() {
         setIsLoading(true)
         
         // FMS sheet - For total leads (column B) and pending follow-ups (column K not null and column L null)
-        const fmsUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+        const fmsUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
         const fmsResponse = await fetch(fmsUrl)
         const fmsText = await fmsResponse.text()
         
@@ -34,7 +34,7 @@ function DashboardMetrics() {
         const fmsData = JSON.parse(fmsJsonData)
         
         // Make Quotation sheet - For quotations sent (count of rows in column B)
-        const quotationUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=Make Quotation"
+        const quotationUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=Make Quotation"
         const quotationResponse = await fetch(quotationUrl)
         const quotationText = await quotationResponse.text()
         
@@ -44,7 +44,7 @@ function DashboardMetrics() {
         const quotationJsonData = quotationText.substring(quotationJsonStart, quotationJsonEnd)
         const quotationData = JSON.parse(quotationJsonData)
 
-        const enquiryUrl1 = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=Enquiry Tracker"
+        const enquiryUrl1 = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=Enquiry Tracker"
         const enquiryResponse1 = await fetch(enquiryUrl1)
         const enquiryText1 = await enquiryResponse1.text()
         
@@ -55,7 +55,7 @@ function DashboardMetrics() {
         const enquiryData1 = JSON.parse(enquiryJsonData1)
         
         // Enquiry to Order sheet - For total enquiry and pending enquiry
-        const enquiryUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=ENQUIRY TO ORDER"
+        const enquiryUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=ENQUIRY TO ORDER"
         const enquiryResponse = await fetch(enquiryUrl)
         const enquiryText = await enquiryResponse.text()
         

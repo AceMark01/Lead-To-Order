@@ -12,7 +12,7 @@ import { useQuotationData } from "./use-quotation-data"
 
 export const getNextQuotationNumber = async (companyPrefix = "NBD") => {
   const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+    "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
 
   try {
     const params = {
@@ -51,7 +51,7 @@ export const getNextQuotationNumber = async (companyPrefix = "NBD") => {
 // NEW: Enhanced function to get company prefix from both FMS and ENQUIRY TO ORDER sheets
 export const getCompanyPrefix = async (companyName) => {
   const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+    "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
 
   try {
     const params = {
@@ -136,7 +136,7 @@ function Quotation() {
       try {
         console.log("Fetching existing quotations...")
         const scriptUrl =
-          "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+          "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
         const response = await fetch(scriptUrl, {
           method: "POST",
           headers: {
@@ -223,7 +223,7 @@ function Quotation() {
 
     try {
       const scriptUrl =
-        "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+        "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
       const response = await fetch(scriptUrl, {
         method: "POST",
         headers: {
@@ -408,7 +408,7 @@ function Quotation() {
       const fileName = `Quotation_${finalQuotationNo}.pdf`
 
       const scriptUrl =
-        "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+        "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
 
       const pdfParams = {
         action: "uploadPDF",

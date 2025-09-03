@@ -264,7 +264,7 @@ const formatItemQty = (itemQtyString) => {
 
         // Fetch data from FMS sheet for Pending Follow-ups
         const pendingUrl =
-          "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+          "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
         const pendingResponse = await fetch(pendingUrl)
         const pendingText = await pendingResponse.text()
 
@@ -277,7 +277,7 @@ const formatItemQty = (itemQtyString) => {
 
         // Fetch data from Leads Tracker sheet for History
         const historyUrl =
-          "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=Leads Tracker"
+          "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=Leads Tracker"
         const historyResponse = await fetch(historyUrl)
         const historyText = await historyResponse.text()
 

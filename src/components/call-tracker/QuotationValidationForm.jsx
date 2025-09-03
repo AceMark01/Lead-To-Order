@@ -14,7 +14,7 @@ function QuotationValidationForm({ formData, onFieldChange, enquiryNo }) {
         setIsLoading(true)
         
         // Fetch data from DROPDOWN sheet
-        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
         const response = await fetch(dropdownUrl)
         const text = await response.text()
         
@@ -67,7 +67,7 @@ function QuotationValidationForm({ formData, onFieldChange, enquiryNo }) {
   //       setIsLoadingQuotations(true)
         
   //       // Fetch data from FMS sheet or use the dedicated endpoint
-  //       const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+  //       const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
         
   //       const params = {
   //         action: "getQuotationNumber",
@@ -115,7 +115,7 @@ function QuotationValidationForm({ formData, onFieldChange, enquiryNo }) {
         setIsLoadingQuotations(true)
         
         // Fetch data from FMS sheet
-        const fmsUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=FMS"
+        const fmsUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=FMS"
         const response = await fetch(fmsUrl)
         const text = await response.text()
         

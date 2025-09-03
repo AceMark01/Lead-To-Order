@@ -133,7 +133,7 @@ const [hiddenFields, setHiddenFields] = useState({
   useEffect(() => {
     const fetchProductData = async () => {
       try {
-        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN";
+        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN";
         const response = await fetch(dropdownUrl);
         const text = await response.text();
         
@@ -300,7 +300,7 @@ useEffect(() => {
   const fetchExistingQuotations = async () => {
     try {
       console.log("Fetching existing quotations...");
-      const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec";
+      const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec ";
       const response = await fetch(scriptUrl, {
         method: "POST",
         headers: {
@@ -358,7 +358,7 @@ const handleQuotationSelect = async (quotationNo) => {
   setSelectedQuotation(quotationNo);
 
   try {
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec";
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec ";
     const response = await fetch(scriptUrl, {
       method: "POST",
       headers: {
@@ -505,7 +505,7 @@ const handleQuotationSelect = async (quotationNo) => {
     const fetchDropdownData = async () => {
       try {
         // Fetch data from Dropdown sheet
-        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1TZVWkmASF7tG-QER17588sl4SvRgY7knFKFDtYFjB0Q/gviz/tq?tqx=out:json&sheet=DROPDOWN"
+        const dropdownUrl = "https://docs.google.com/spreadsheets/d/1d4iBP4saSADGyxBR0zDLgq8x-hfzfeS9_74hPtLU_sM/gviz/tq?tqx=out:json&sheet=DROPDOWN"
         const dropdownResponse = await fetch(dropdownUrl)
         const dropdownText = await dropdownResponse.text()
         
@@ -1272,7 +1272,7 @@ if (isRevising && selectedQuotation) {
     const fileName = `Quotation_${finalQuotationNo}.pdf`
     
     // Script URL
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
     
     // 1. Upload PDF to Google Drive and get URL
     const pdfParams = {
@@ -1536,7 +1536,7 @@ const itemPromises = quotationData.items.map(async (item) => {
   // Helper function to increment quotation number
   const getNextQuotationNumber = async () => {
     // Script URL
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbzTPj_x_0Sh6uCNnMDi-KlwVzkGV3nC4tRF6kGUNA1vXG0Ykx4Lq6ccR9kYv6Cst108aQ/exec"
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbyluuJuZMnK3ArsP_pkvT5KWKB5i35pvCVts7J5HLEBVF8hsLf83PKH4r9LvivbXUAp/exec "
     
     try {
       // Prepare parameters to get the last quotation number
