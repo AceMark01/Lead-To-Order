@@ -11,7 +11,7 @@ const SpecialOfferSection = ({
   return (
     <div className="bg-white border rounded-lg p-4 shadow-sm">
       <h3 className="text-lg font-medium mb-4 text-center text-orange-600 font-bold">
-        Divine Empire's 10th Anniversary Special Offer
+        ACE MARK SPECIAL OFFER
       </h3>
 
       <div className="space-y-4">

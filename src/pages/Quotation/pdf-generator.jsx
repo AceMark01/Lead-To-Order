@@ -408,7 +408,7 @@
 
 //   if (quotationData.specialOffers && quotationData.specialOffers.filter((offer) => offer.trim()).length > 0) {
 //     checkSpace(30)
-//     addSectionHeader("DIVINE EMPIRE'S 10TH ANNIVERSARY SPECIAL OFFER", "")
+//     addSectionHeader("ACE MARK SPECIAL OFFER", "")
 
 //     doc.setFillColor(...colors.background.yellow)
 //     const offersContentY = currentY
@@ -1151,7 +1151,7 @@ currentY = summaryCurrentY + 15
     doc.setFont("helvetica", "bold")
     doc.setFontSize(10)
     doc.setTextColor(0, 50, 100)
-    doc.text("DIVINE EMPIRE'S 10TH ANNIVERSARY SPECIAL OFFER", margin, currentY)
+    doc.text("ACE MARK SPECIAL OFFER", margin, currentY)
     currentY += 6
 
     quotationData.specialOffers

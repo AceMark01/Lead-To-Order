@@ -332,7 +332,7 @@ const QuotationPreview = ({
                   .length > 0 && (
                   <div className="mt-4">
                     <h4 className="font-bold mb-2 text-orange-600">
-                      Divine Empire's 10th Anniversary Special Offer
+                      ACE MARK SPECIAL OFFER
                     </h4>
                     <div className="bg-orange-50 p-3 rounded border border-orange-200">
                       {quotationData.specialOffers
